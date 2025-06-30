@@ -22,5 +22,17 @@ Route::get('/register', function () {
 })->name('register');
 
 Route::get('/panser', function () {
-return view('frontend.panser'); // atau sesuaikan lokasi view Anda
+    return view('frontend.panser');
 })->name('panser');
+
+Route::get('/our', function () {
+    return view('frontend.our');
+})->name('our');
+
+Route::get('/custom', function () {
+    return view('frontend.custom');
+})->name('custom');
+
+Route::get('/lh', function () {
+    return view('frontend.lh');
+})->name('lh');

@@ -380,48 +380,44 @@
 
   updateCarousel(); // Init
   </script>
-  <!-- Daftar Produk -->
-  <section class="container mx-auto px-4 py-16 bg-grey text-black" id="produk">
-   <h2 class="text-3xl font-bold text-center mb-8">
-    Daftar Produk
-   </h2>
-   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-    <!-- Produk 1 -->
-    <div class="relative overflow-hidden rounded-lg shadow-lg">
-     <img alt="Jersey 1" class="w-full h-70 object-cover" src="{{ asset('assets/x.png') }}"/>
-     <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-     <a class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm btn-animate" href="{{ route('panser') }}" > Panser &rarr; </a>
-     </div>
+
+  
+ <!-- Daftar Produk -->
+<section id="produk" class="container mx-auto px-4 py-16 bg-grey text-black">
+    <h2 class="text-3xl font-bold text-center mb-8">Daftar Produk</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Produk 1 -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg">
+            <img src="{{ asset('assets/x.png') }}" alt="Jersey 1" class="w-full h-70 object-cover">
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                <a href="{{ route('panser') }}" class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm btn-animate">Panser →</a>
+            </div>
+        </div>
+        <!-- Produk 2 -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg">
+            <img src="{{ asset('assets/logo.png') }}" alt="Jersey 2" class="w-full h-70 object-cover">
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                <a href="{{ route('our') }}" class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm btn-animate">Our →</a>
+            </div>
+        </div>
+        <!-- Produk 3 -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg">
+            <img src="{{ asset('assets/custom.jpg') }}" alt="Jersey 3" class="w-full h-70 object-cover">
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                <a href="{{ route('custom') }}" class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm btn-animate">Custom →</a>
+            </div>
+        </div>
+        <!-- Produk 4 -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg">
+            <img src="{{ asset('assets/loba-harkos.png') }}" alt="Jersey 4" class="w-full h-70 object-cover">
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                <a href="{{ route('lh') }}" class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm btn-animate">LH →</a>
+            </div>
+        </div>
     </div>
-    <!-- Produk 2 -->
-    <div class="relative overflow-hidden rounded-lg shadow-lg">
-     <img alt="Jersey 2" class="w-full h-70 object-cover" src="{{ asset('assets/logo.png') }}"/>
-     <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-      <a class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm btn-animate" href="our.html">
-       Our &rarr;
-      </a>
-     </div>
-    </div>
-    <!-- Produk 3 -->
-    <div class="relative overflow-hidden rounded-lg shadow-lg">
-     <img alt="Jersey 3" class="w-full h-70 object-cover" src="{{ asset('assets/custom.jpg') }}"/>
-     <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-      <a class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm btn-animate" href="custom.html">
-       Custom &rarr;
-      </a>
-     </div>
-    </div>
-    <!-- Produk 4 -->
-    <div class="relative overflow-hidden rounded-lg shadow-lg">
-     <img alt="Jersey 4" class="w-full h-70 object-cover" src="{{ asset('assets/loba-harkos.png') }}"/>
-     <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-      <a class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm btn-animate" href="lh.html">
-       LH &rarr;
-      </a>
-     </div>
-    </div>
-   </div>
-  </section>
+</section>
+
+
   <!-- Kontak Section -->
   <section class="py-10 bg-white" id="contact">
    <div class="container mx-auto px-4">

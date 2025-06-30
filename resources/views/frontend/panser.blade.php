@@ -25,11 +25,11 @@
 <nav class="bg-gray-900 text-white fixed top-0 w-full z-50 animate__animated animate__fadeInDown">
     <div class="container mx-auto flex items-center justify-between px-4 py-4">
         <a class="flex items-center space-x-2" href="#">
-            <img src="logo.png" alt="Logo" class="h-10 w-10 object-cover">
+            <img src="{{ asset('assets/logo.png') }}" alt="Logo" class="h-10 w-10 object-cover">
             <span class="text-lg font-bold animate__animated animate__pulse animate__infinite">Enma Apparel</span>
         </a>
         <ul class="flex space-x-6">
-            <li><a class="hover:text-gray-300 animate__animated animate__fadeIn" href="{{ route('index') }}">Back</a></li>
+            <li><a class="hover:text-gray-300 animate__animated animate__fadeIn" href="index.html">Back</a></li>
             <li><a class="hover:text-gray-300 animate__animated animate__fadeIn" href="#contact">Kontak</a></li>
         </ul>
     </div>
@@ -42,7 +42,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
            <!-- Produk 1 -->
 <div class="bg-white shadow-md rounded-md overflow-hidden transform hover:scale-105 transition-transform">
-    <img src="home.webp" alt="Jersey 1" class="w-full h-78 object-cover">
+    <img src="{{ asset('assets/home.webp') }}" alt="Jersey 1" class="w-full h-78 object-cover">
     <div class="p-4 text-center">
         <h5 class="text-lg font-semibold">Jersey Panser Home 24/25</h5>
         <p class="text-gray-600">Rp 200.000</p>
@@ -57,7 +57,7 @@
 
             <!-- Produk 2 -->
             <div class="bg-white shadow-md rounded-md overflow-hidden transform hover:scale-105 transition-transform">
-                <img src="away.webp" alt="Jersey 2" class="w-full h-78 object-cover">
+                <img src="{{ asset('assets/away.webp') }}" alt="Jersey 2" class="w-full h-78 object-cover">
                 <div class="p-4 text-center">
                     <h5 class="text-lg font-semibold">Jersey Panser Away 24/25</h5>
                     <p class="text-gray-600">Rp 250.000</p>
@@ -74,10 +74,10 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="speciall.jpg" class="w-full h-78 object-cover" alt="Jersey Special 1">
+                <img src="{{ asset('assets/speciall.jpg') }}" class="w-full h-78 object-cover" alt="Jersey Special 1">
             </div>
             <div class="swiper-slide">
-                <img src="special.jpg" class="w-full h-78 object-cover" alt="Jersey Special 2">
+                <img src="{{ asset('assets/special.jpg') }}" class="w-full h-78 object-cover" alt="Jersey Special 2">
             </div>
         </div>
         <!-- Navigasi Swiper -->
