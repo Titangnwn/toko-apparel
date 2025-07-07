@@ -273,7 +273,7 @@
        </h2>
        <p class="text-sm md:text-base text-gray-700">
         Kami juga mencoba menjalin kolaborasi dengan salah satu komunitas di Bandung yang memiliki fokus pada jejepangan,
-            dan kami memberikan jersey tersebut dengan variasi ala nuansa Jepang.
+            dan kami memberikan jersey tersebut dengan variasi ala nuansa Jepang yang asli .
        </p>
       </div>
      </div>
