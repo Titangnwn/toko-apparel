@@ -10,50 +10,53 @@
 
   <div class="bg-white p-8 rounded-2xl shadow-md w-full max-w-md">
     <h2 class="text-2xl font-bold text-center mb-6">Registrasi Akun</h2>
-    <form id="registerForm" class="space-y-4">
-      <input type="text" id="nama" placeholder="Nama Lengkap"
+
+    @if(session('success'))
+      <div class="bg-green-100 text-green-700 px-4 py-2 rounded mb-4">
+        {{ session('success') }}
+      </div>
+    @endif
+
+    @if ($errors->any())
+      <div class="bg-red-100 text-red-700 px-4 py-2 rounded mb-4">
+        <ul class="list-disc list-inside">
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
+
+    <form action="{{ route('register.store') }}" method="POST" class="space-y-4">
+      @csrf
+
+      <input type="text" name="name" placeholder="Nama Lengkap"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        value="{{ old('name') }}" required />
+
+      <input type="email" name="email" placeholder="Email"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        value="{{ old('email') }}" required />
+
+      <input type="password" name="password" placeholder="Password"
         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         required />
 
-      <input type="email" id="email" placeholder="Email"
+      <input type="password" name="password_confirmation" placeholder="Konfirmasi Password"
         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         required />
-
-      <input type="password" id="password" placeholder="Password"
-        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-        required />
-
-      <input type="password" id="confirmPassword" placeholder="Konfirmasi Password"
-        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-        required />
-
-      <div id="errorMsg" class="text-red-600 text-sm"></div>
 
       <button type="submit"
         class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200">
         Daftar
       </button>
     </form>
+
+    <p class="text-center text-sm text-gray-600 mt-4">
+      Sudah punya akun?
+      <a href="{{ route('login') }}" class="text-blue-600 hover:underline">Login di sini</a>
+    </p>
   </div>
-
-  <script>
-    document.getElementById("registerForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirmPassword").value;
-      const errorMsg = document.getElementById("errorMsg");
-
-      if (password !== confirmPassword) {
-        errorMsg.textContent = "Password tidak cocok!";
-        return;
-      }
-
-      errorMsg.textContent = "";
-      alert("Registrasi berhasil!");
-      // Tambahkan penyimpanan data atau redirect di sini jika perlu
-    });
-  </script>
 
 </body>
 </html>

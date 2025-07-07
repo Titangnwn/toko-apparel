@@ -29,7 +29,8 @@
             <span class="text-lg font-bold animate__animated animate__pulse animate__infinite">Enma Apparel</span>
         </a>
         <ul class="flex space-x-6">
-            <li><a class="hover:text-gray-300 animate__animated animate__fadeIn" href="index.html">Back</a></li>
+<li><a href="{{ route('index') }}" class="hover:text-gray-300 animate__animated animate__fadeIn">Back</a></li>
+
         </ul>
     </div>
 </nav>
