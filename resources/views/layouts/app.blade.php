@@ -9,16 +9,6 @@
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans leading-relaxed min-h-screen flex flex-col">
 
-    <!-- Header & Navbar -->
-    <header class="bg-white shadow">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-blue-600">MyProfile</h1>
-            <nav class="space-x-4">
-                <a href="/" class="text-gray-700 hover:text-blue-500 transition">Home</a>
-            </nav>
-        </div>
-    </header>
-
     <!-- Main Content -->
     <main class="flex-grow">
         <div class="container mx-auto px-4 py-10">

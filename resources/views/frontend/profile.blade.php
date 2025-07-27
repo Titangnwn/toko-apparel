@@ -1,6 +1,15 @@
 <!-- resources/views/frontend/profile.blade.php -->
 @extends('layouts.app')
 
+<header class="bg-white shadow">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">MyProfile</h1>
+            <nav class="space-x-4">
+                <a href="/" class="text-gray-700 hover:text-blue-500 transition">Home</a>
+            </nav>
+        </div>
+    </header>
+
 @section('content')
 <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
     <div class="text-center">
