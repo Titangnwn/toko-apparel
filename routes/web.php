@@ -4,6 +4,38 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CartController;
+
+// Halaman keranjang
+Route::get('/keranjang', [CartController::class, 'index'])->name('cart.index');
+
+// Tambah ke keranjang
+Route::post('/keranjang/tambah', [CartController::class, 'addToCart'])->name('cart.add');
+
+// Hapus dari keranjang
+Route::get('/keranjang/hapus/{id}', [CartController::class, 'remove'])->name('cart.remove');
+
+Route::post('/keranjang/bayar', [CartController::class, 'checkout'])->name('cart.checkout');
+
+Route::get('/keranjang/bayar/{id}', [CartController::class, 'payOne'])->name('cart.payOne');
+
+// admin transaksi
+Route::get('/admin/transaksi', [CartController::class, 'adminTransaksi'])->name('admin.transaksi');
+
+
+Route::middleware(['auth'])->group(function () {
+    // Menampilkan halaman profil
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+
+    // Menampilkan halaman edit profil
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+
+    // Menangani update profil
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+});
+
+
 
 // Beranda
 Route::get('/', function () {
@@ -62,6 +94,7 @@ Route::get('/admin/dashboard', function () {
     }
     return redirect('/');
 })->middleware('auth');
+
 
 
 // Rute tambahan

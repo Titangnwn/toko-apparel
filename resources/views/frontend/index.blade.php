@@ -52,93 +52,114 @@
   </style>
  </head>
  <body class="bg-white-500">
-  <!-- Navbar -->
-  <nav class="navbar bg-white text-black fixed top-0 w-full z-50 py-4 shadow" id="navbar">
-   <div class="container mx-auto flex items-center justify-between px-4">
-    <!-- Profil Kiri -->
-    <div class="flex items-center space-x-4">
-     <a href="{{ route('login') }}">
-    <img src="{{ asset('assets/OIP.jpeg') }}" class="h-10 w-10 rounded-full object-cover hover:opacity-80 transition-opacity duration-300" alt="Profil">
-</a>
+ <!-- Navbar -->
+<nav class="navbar bg-white text-black fixed top-0 w-full z-50 py-4 shadow" id="navbar">
+    <div class="container mx-auto flex items-center justify-between px-4">
+        <!-- Profil Kiri -->
+        <div class="flex items-center space-x-4">
+            @guest
+                <!-- Jika belum login, arahkan ke login -->
+                <a href="{{ route('login') }}">
+                    <img src="{{ asset('assets/OIP.jpeg') }}" class="h-10 w-10 rounded-full object-cover hover:opacity-80 transition-opacity duration-300" alt="Profil">
+                </a>
+            @endguest
 
-     <!-- Logo -->
-     <a class="flex items-center space-x-2 group" href="#">
-      <img alt="Logo" class="h-10 w-10 object-cover" src="{{ asset('assets/logo.png') }}">
-       <span class="text-lg font-bold text-yellow-600 transition-colors duration-500 group-hover:text-white group-active:text-white">
-        Enma Apparel
-       </span>
-      </img>
-     </a>
+            @auth
+                <!-- Jika sudah login, arahkan ke halaman profil -->
+                <a href="{{ route('profile.show') }}">
+                    <img src="{{ asset('assets/OIP.jpeg') }}" class="h-10 w-10 rounded-full object-cover hover:opacity-80 transition-opacity duration-300" alt="Profil">
+                </a>
+            @endauth
+
+            <!-- Logo -->
+            <a class="flex items-center space-x-2 group" href="#">
+                <img alt="Logo" class="h-10 w-10 object-cover" src="{{ asset('assets/logo.png') }}">
+                <span class="text-lg font-bold text-yellow-600 transition-colors duration-500 group-hover:text-white group-active:text-white">
+                    Enma Apparel
+                </span>
+            </a>
+        </div>
+        <!-- Hamburger Menu Button -->
+        <button class="block lg:hidden focus:outline-none" id="menu-toggle">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </button>
+        <!-- Menu (Desktop) -->
+        <ul class="hidden lg:flex space-x-6" id="menu">
+            <li>
+                <a class="relative group text-black transition" href="#produk">
+                    <span class="pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 group-hover:after:w-full">
+                        Produk
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="relative group text-black transition" href="#Tentang">
+                    <span class="pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 group-hover:after:w-full">
+                        Tentang
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="relative group text-black transition" href="#contact">
+                    <span class="pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 group-hover:after:w-full">
+                        Kontak
+                    </span>
+                </a>
+            </li>
+            <!-- Tambah tombol keranjang -->
+<li>
+    <a href="{{ route('cart.index') }}" class="relative group text-black transition flex items-center">
+        <svg class="w-6 h-6 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 7M7 13l-1.3 5.5a1 1 0 001 1.5H19a1 1 0 001-1.5L17 13" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 group-hover:after:w-full">
+            Keranjang
+        </span>
+    </a>
+</li>
+
+        </ul>
     </div>
-    <!-- Hamburger Menu Button -->
-    <button class="block lg:hidden focus:outline-none" id="menu-toggle">
-     <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round">
-      </path>
-     </svg>
-    </button>
-    <!-- Menu (Desktop) -->
-    <ul class="hidden lg:flex space-x-6" id="menu">
-     <li>
-      <a class="relative group text-black transition" href="#produk">
-       <span class="pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 group-hover:after:w-full">
-        Produk
-       </span>
-      </a>
-     </li>
-     <li>
-      <a class="relative group text-black transition" href="#Tentang">
-       <span class="pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 group-hover:after:w-full">
-        Tentang
-       </span>
-      </a>
-     </li>
-     <li>
-      <a class="relative group text-black transition" href="#contact">
-       <span class="pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 group-hover:after:w-full">
-        Kontak
-       </span>
-      </a>
-     </li>
+    <!-- Mobile Menu (Toggle On) -->
+    <ul class="lg:hidden hidden flex-col px-6 pb-4 space-y-4" id="mobile-menu">
+        <li>
+            <a class="relative group block text-black" href="#produk">
+                <span class="pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 group-hover:after:w-full">
+                    Produk
+                </span>
+            </a>
+        </li>
+        <li>
+            <a class="relative group block text-black" href="#Tentang">
+                <span class="pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 group-hover:after:w-full">
+                    Tentang
+                </span>
+            </a>
+        </li>
+        <li>
+            <a class="relative group block text-black" href="#contact">
+                <span class="pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 group-hover:after:w-full">
+                    Kontak
+                </span>
+            </a>
+        </li>
     </ul>
-   </div>
-   <!-- Mobile Menu (Toggle On) -->
-   <ul class="lg:hidden hidden flex-col px-6 pb-4 space-y-4" id="mobile-menu">
-    <li>
-     <a class="relative group block text-black" href="#produk">
-      <span class="pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 group-hover:after:w-full">
-       Produk
-      </span>
-     </a>
-    </li>
-    <li>
-     <a class="relative group block text-black" href="#Tentang">
-      <span class="pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 group-hover:after:w-full">
-       Tentang
-      </span>
-     </a>
-    </li>
-    <li>
-     <a class="relative group block text-black" href="#contact">
-      <span class="pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 group-hover:after:w-full">
-       Kontak
-      </span>
-     </a>
-    </li>
-   </ul>
-  </nav>
-  &gt;
-  <!-- JS Toggle Script -->
-  <script>
-   const toggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+</nav>
 
-  toggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-  </script>
-  <script>
-   window.addEventListener('scroll', function() {
+<!-- JS Toggle Script -->
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+<script>
+    window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -146,55 +167,60 @@
             navbar.classList.remove('scrolled');
         }
     });
-  </script>
-  <!-- Add this padding to ensure the content doesn't go behind the navbar -->
-  <div class="pt-20">
-  </div>
-  <!--// javaScript untuk mengubah warna teks saat di scroll -->
-  <script>
-   window.addEventListener('scroll', () => {
-    const brandText = document.getElementById('brand-text');
-    if (window.scrollY > 50) {
-      // Saat scroll turun
-      brandText.classList.remove('text-black');
-      brandText.classList.add('text-yellow-500'); 
-    } else {
-      // Saat kembali ke atas
-      brandText.classList.remove('text-blue-600');
-      brandText.classList.add('text-black');
+</script>
+
+<!-- JavaScript untuk mengubah warna teks saat di scroll -->
+<script>
+    window.addEventListener('scroll', () => {
+        const brandText = document.getElementById('brand-text');
+        if (window.scrollY > 50) {
+            // Saat scroll turun
+            brandText.classList.remove('text-black');
+            brandText.classList.add('text-yellow-500'); 
+        } else {
+            // Saat kembali ke atas
+            brandText.classList.remove('text-yellow-500');
+            brandText.classList.add('text-black');
+        }
+    });
+</script>
+
+<!-- Add this padding to ensure the content doesn't go behind the navbar -->
+<div class="pt-20"></div>
+
+<style>
+    .carousel-item img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        max-height: 100%;
     }
-  });
-  </script>
-  <style>
-   .carousel-item img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    max-height: 100%;
-  }
-  .carousel-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  .carousel-button {
-    background-color: black !important;
-  }
-  </style>
-  <div class="relative w-full" data-carousel="slide" id="default-carousel">
-   <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-    <div class="duration-700 ease-in-out carousel-item" data-carousel-item="">
-     <img alt="Logo Image" class="absolute block object-cover" src="{{ asset('assets/logo.png') }}"/>
+    .carousel-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .carousel-button {
+        background-color: black !important;
+    }
+</style>
+
+<div class="relative w-full" data-carousel="slide" id="default-carousel">
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <div class="duration-700 ease-in-out carousel-item" data-carousel-item="">
+            <img alt="Logo Image" class="absolute block object-cover" src="{{ asset('assets/logo.png') }}"/>
+        </div>
+        <div class="hidden duration-700 ease-in-out carousel-item" data-carousel-item="">
+            <img alt="Bandung Image" class="absolute block object-cover" src="{{ asset('assets/bandung.jpg') }}"/>
+        </div>
+        <div class="hidden duration-700 ease-in-out carousel-item" data-carousel-item="">
+            <img alt="Bola Image" class="absolute block object-cover" src="{{ asset('assets/ennma.png') }}"/>
+        </div>
     </div>
-    <div class="hidden duration-700 ease-in-out carousel-item" data-carousel-item="">
-     <img alt="Bandung Image" class="absolute block object-cover" src="{{ asset('assets/bandung.jpg') }}"/>
-    </div>
-    <div class="hidden duration-700 ease-in-out carousel-item" data-carousel-item="">
-     <img alt="Bola Image" class="absolute block object-cover" src="{{ asset('assets/ennma.png') }}"/>
-    </div>
-   </div>
+</div>
+
    <!-- Slider indicators -->
    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
     <button aria-current="true" aria-label="Slide 1" class="w-3 h-3 rounded-full" data-carousel-slide-to="0" type="button">

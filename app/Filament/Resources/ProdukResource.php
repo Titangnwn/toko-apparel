@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProdukResource\Pages;
-use App\Models\Produk;
+use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,7 +13,9 @@ use Illuminate\Database\Eloquent\Builder;
 
 class ProdukResource extends Resource
 {
-    protected static ?string $model = Produk::class;
+   protected static ?string $model = Product::class;
+
+
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationLabel = 'Produk';
@@ -34,7 +36,11 @@ class ProdukResource extends Resource
             Forms\Components\FileUpload::make('gambar')
                 ->label('Gambar')
                 ->image()
-                ->directory('produk-gambar'),
+                ->directory('produk-gambar') // folder di storage/app/public
+                ->disk('public') // agar bisa diakses via storage link
+                ->preserveFilenames()
+                ->imagePreviewHeight('150')
+                ->required(),
 
             Forms\Components\TextInput::make('harga')
                 ->label('Harga')
@@ -49,11 +55,25 @@ class ProdukResource extends Resource
         ]);
     }
 
+   public static function getModel(): string
+{
+    return Product::class;
+}
+
+
+
     public static function table(Table $table): Table
     {
         return $table->columns([
             Tables\Columns\TextColumn::make('nama')->searchable()->sortable(),
-            Tables\Columns\ImageColumn::make('gambar')->label('Foto')->circular(),
+
+            Tables\Columns\ImageColumn::make('gambar')
+                ->label('Foto')
+                ->disk('public') // penting agar tahu gambar dari /storage
+                ->height(60)
+                ->width(60)
+                ->circular(),
+
             Tables\Columns\TextColumn::make('harga')->money('IDR')->sortable(),
             Tables\Columns\TextColumn::make('stok')->sortable(),
             Tables\Columns\TextColumn::make('created_at')->label('Tanggal Input')->dateTime('d M Y'),

@@ -48,12 +48,22 @@
     <div class="p-4 text-center">
         <h5 class="text-lg font-semibold">Jersey Panser Home 24/25</h5>
         <p class="text-gray-600">Rp 200.000</p>
-        <a href="panserhome.html" class="mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 5m0 0h16m-16 0a1 1 0 001 1h14a1 1 0 001-1m-16 0a1 1 0 011-1" />
-            </svg>
-            Beli Sekarang
-        </a>
+       <form action="{{ route('cart.add') }}" method="POST">
+    @csrf
+    <input type="hidden" name="id" value="1">
+    <input type="hidden" name="name" value="Jersey Panser Home 24/25">
+    <input type="hidden" name="price" value="200000">
+    <input type="hidden" name="image" value="{{ asset('assets/home.webp') }}">
+
+    <button type="submit" class="mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 5m0 0h16m-16 0a1 1 0 001 1h14a1 1 0 001-1m-16 0a1 1 0 011-1" />
+        </svg>
+        Tambah ke Keranjang
+    </button>
+</form>
+
     </div>
 </div>
 
@@ -63,14 +73,24 @@
                 <div class="p-4 text-center">
                     <h5 class="text-lg font-semibold">Jersey Panser Away 24/25</h5>
                     <p class="text-gray-600">Rp 250.000</p>
-                    <a href="panserhome.html" class="mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 5m0 0h16m-16 0a1 1 0 001 1h14a1 1 0 001-1m-16 0a1 1 0 011-1" />
-                        </svg>
-                        Beli Sekarang
-                    </a>
-                </div>
-            </div>
+                     <form action="{{ route('cart.add') }}" method="POST">
+    @csrf
+    <input type="hidden" name="id" value="2">
+    <input type="hidden" name="name" value="Jersey Panser away 24/25">
+    <input type="hidden" name="price" value="250000">
+    <input type="hidden" name="image" value="{{ asset('assets/away.webp') }}">
+
+    <button type="submit" class="mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 5m0 0h16m-16 0a1 1 0 001 1h14a1 1 0 001-1m-16 0a1 1 0 011-1" />
+        </svg>
+        Tambah ke Keranjang
+    </button>
+</form>
+
+    </div>
+</div>
            <!-- Produk 3 -->
 <div class="bg-white shadow-md rounded-md overflow-hidden transform hover:scale-105 transition-transform">
     <div class="swiper-container">
@@ -90,12 +110,22 @@
     <div class="p-4 text-center">
         <h5 class="text-lg font-semibold">Jersey Special dari Panser</h5>
         <p class="text-gray-600">Rp 200.000</p>
-        <a href="panserhome.html" class="mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 5m0 0h16m-16 0a1 1 0 001 1h14a1 1 0 001-1m-16 0a1 1 0 011-1" />
-            </svg>
-            Beli Sekarang
-        </a>
+        <form action="{{ route('cart.add') }}" method="POST">
+    @csrf
+    <input type="hidden" name="id" value="3">
+    <input type="hidden" name="name" value="Jersey special">
+    <input type="hidden" name="price" value="200000">
+    <input type="hidden" name="image" value="{{ asset('assets/special.webp') }}">
+
+    <button type="submit" class="mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 5m0 0h16m-16 0a1 1 0 001 1h14a1 1 0 001-1m-16 0a1 1 0 011-1" />
+        </svg>
+        Tambah ke Keranjang
+    </button>
+</form>
+
     </div>
 </div>
 
