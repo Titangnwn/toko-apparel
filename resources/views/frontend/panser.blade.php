@@ -31,9 +31,6 @@
         <ul class="flex space-x-6">
            <!-- Tombol Back -->
 <li><a href="{{ route('index') }}" class="hover:text-gray-300 animate__animated animate__fadeIn">Back</a></li>
-
-            <li><a class="hover:text-gray-300 animate__animated animate__fadeIn" href="#contact">Kontak</a></li>
-        </ul>
     </div>
 </nav>
 
@@ -150,37 +147,21 @@
     });
 </script>
 
-<!-- Kontak Section -->
-<section id="contact" class="py-10 bg-white">
-    <div class="container mx-auto px-4">
-        <h2 class="text-center text-2xl font-bold mb-8">Kontak Kami</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md">
-                <img src="Ig.png" alt="Instagram" class="w-12 h-12 mb-4">
-                <h3 class="text-lg font-semibold">Instagram</h3>
-                <p>@enma.Apparel</p>
-                <a href="https://www.instagram.com/enma.apparel" class="text-blue-500 mt-2">Follow Kami</a>
-            </div>
-            <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md">
-                <img src="wa.png" alt="WhatsApp" class="w-12 h-12 mb-4">
-                <h3 class="text-lg font-semibold">WhatsApp</h3>
-                <p>-</p>
-                <a href="#" class="text-green-500 mt-2">Chat Kami</a>
-            </div>
-            <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md">
-                <img src="email.jpeg" alt="Email" class="w-12 h-12 mb-4">
-                <h3 class="text-lg font-semibold">Email</h3>
-                <p>enmaapparel@gmail.com</p>
-                <a href="mailto:contact@enma-apparel.com" class="text-red-500 mt-2">Email Kami</a>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Footer -->
-<footer class="bg-gray-900 text-white py-4">
-    <div class="container mx-auto text-center">
-        <p>&copy; 2025 Enma Apparel. All Rights Reserved.</p>
+<footer class="bg-white dark:bg-gray-900 w-full rounded-none shadow-sm">
+    <div class="w-full p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="{{ asset('assets/logo.png') }}" class="h-8" alt="logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                    Enma Apparel
+                </span>
+            </a>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            &copy; 2025 <a href="#" class="hover:underline">Enma Apparel™</a>. All Rights Reserved.
+        </span>
     </div>
 </footer>
 </body>
