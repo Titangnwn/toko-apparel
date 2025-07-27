@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 use App\Models\Produk;
 
@@ -9,7 +10,7 @@ class ProdukSeeder extends Seeder
 {
     public function run()
     {
-        Produk::create([
+        Product::create([
             'nama' => 'Jersey panser home',
             'deskripsi' => 'Bahan 3D Emboss adem dan nyaman untuk olahraga.',
             'harga' => 200000,
@@ -17,7 +18,7 @@ class ProdukSeeder extends Seeder
             'gambar' => null,
         ]);
 
-        Produk::create([
+        Product::create([
             'nama' => 'jersey panser away',
             'deskripsi' => 'Bahan 3D Emboss adem dan nyaman untuk olahraga',
             'harga' => 200000,

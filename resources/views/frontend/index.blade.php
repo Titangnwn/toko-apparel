@@ -38,10 +38,6 @@
          .navbar {
             transition: all 0.4s ease-in-out;
         }
-        .navbar.scrolled {
-            background-color: rgba(0, 2, 5, 0.308);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
         .navbar ul li a {
             transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
@@ -155,17 +151,6 @@
 
     toggle.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
-    });
-</script>
-
-<script>
-    window.addEventListener('scroll', function() {
-        const navbar = document.getElementById('navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
     });
 </script>
 
@@ -491,8 +476,8 @@
    </div>
   </section>
   <!-- Footer -->
-  <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
-   <div class="w-full max-w-screen-xl mx auto p-4 md:py-8">
+  <footer class="bg-white dark:bg-gray-900 w-full rounded-none shadow-sm">
+   <div class="w-full p-4 md:py-8">
     <div class="sm:flex sm:items-center sm:justify-between">
      <a flex="" href="logo.png class=" items-center="" mb-4="" rtl:space-x-reverse"="" sm:mb-0="" space-x-3="">
       <img alt="logo" class="h-8" src="{{ asset('assets/logo.png') }}">
