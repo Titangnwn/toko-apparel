@@ -22,7 +22,7 @@
 <body class="bg-gray-100">
 
 <!-- Navbar -->
-<nav class="bg-blue-900 text-white fixed top-0 w-full z-50 animate__animated animate__fadeInDown">
+<<nav class="bg-gray-900 text-white fixed top-0 w-full z-50 animate__animated animate__fadeInDown">
     <div class="container mx-auto flex items-center justify-between px-4 py-4">
         <a class="flex items-center space-x-2" href="#">
             <img src="{{ asset('assets/logo.png') }}" alt="Logo" class="h-10 w-10 object-cover">
@@ -31,8 +31,6 @@
         <ul class="flex space-x-6">
             <!-- Tombol Back -->
 <li><a href="{{ route('index') }}" class="hover:text-gray-300 animate__animated animate__fadeIn">Back</a></li>
-
-        </ul>
     </div>
 </nav>
 
@@ -76,10 +74,22 @@
 
 
 <!-- Footer -->
-<footer class="bg-blue-900 text-white py-4">
-    <div class="container mx-auto text-center">
-        <p>&copy; 2025 Enma Apparel. All Rights Reserved.</p>
+<footer class="bg-white dark:bg-gray-900 w-full rounded-none shadow-sm">
+    <div class="w-full p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="{{ asset('assets/logo.png') }}" class="h-8" alt="logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                    Enma Apparel
+                </span>
+            </a>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            &copy; 2025 <a href="#" class="hover:underline">Enma Apparel™</a>. All Rights Reserved.
+        </span>
     </div>
 </footer>
+
 </body>
 </html>
