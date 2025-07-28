@@ -1,3 +1,4 @@
+# Gunakan image PHP resmi + ekstensi
 FROM php:8.2-fpm
 
 # Install dependencies
@@ -7,25 +8,37 @@ RUN apt-get update && apt-get install -y \
     libjpeg-dev \
     libonig-dev \
     libxml2-dev \
-    zip unzip git curl libzip-dev libpq-dev mariadb-client
+    zip \
+    unzip \
+    git \
+    curl \
+    libzip-dev \
+    libpq-dev \
+    mariadb-client
 
-# Install PHP extensions
+# Install ekstensi PHP
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Buat folder kerja
 WORKDIR /var/www/html
 
-# Salin file project kecuali vendor
+# Salin file project (kecuali yg di .dockerignore)
 COPY . .
 
-# Jangan salin vendor (pastikan ada di .dockerignore)
+# Copy env contoh agar tidak error saat build
+RUN cp .env.example .env
 
-# Jalankan diagnose + install composer
-RUN composer diagnose && composer install --no-dev --optimize-autoloader --ignore-platform-reqs
+# Install dependencies Laravel
+RUN composer install --no-dev --optimize-autoloader
 
-# Izin eksekusi untuk artisan
+# Generate APP_KEY (opsional saat build)
+# RUN php artisan key:generate
+
+# Izin artisan
 RUN chmod +x artisan
 
+# Jalankan Laravel
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
