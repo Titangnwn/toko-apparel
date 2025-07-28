@@ -1,8 +1,22 @@
-node_modules
-vendor
+# Laravel specific
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
 .env
+.phpunit.result.cache
+Homestead.yaml
+Homestead.json
+.env.testing
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# Git
 .git
 .gitignore
-Dockerfile
-.dockerignore
-README.md
