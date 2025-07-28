@@ -28,7 +28,7 @@ WORKDIR /var/www/html
 # Salin semua isi project
 COPY . .
 
-# Copy .env ke dalam container
+# Copy .env ke dalam container nya
 COPY .env .env
 
 # Install dependencies Laravel
