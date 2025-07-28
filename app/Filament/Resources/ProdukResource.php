@@ -70,6 +70,7 @@ class ProdukResource extends Resource
             Tables\Columns\ImageColumn::make('gambar')
                 ->label('Foto')
                 ->disk('public') // penting agar tahu gambar dari /storage
+                ->url(fn ($record) => asset('storage/' . $record->gambar))
                 ->height(60)
                 ->width(60)
                 ->circular(),

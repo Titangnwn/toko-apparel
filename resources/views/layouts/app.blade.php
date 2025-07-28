@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Enmma Apparel</title>
-    <link rel="icon" type="image/png" href="{{ asset('assets/logo/logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>

@@ -6,6 +6,7 @@
   <title>
    Enmma Apparrel
   </title>
+  <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
   <script src="https://cdn.tailwindcss.com">
   </script>
   <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js">
