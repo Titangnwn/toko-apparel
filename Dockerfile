@@ -28,6 +28,9 @@ WORKDIR /var/www/html
 # Salin semua isi project
 COPY . .
 
+# Copy .env ke dalam container
+COPY .env .env
+
 # Install dependencies Laravel
 RUN composer install --no-dev --optimize-autoloader
 
