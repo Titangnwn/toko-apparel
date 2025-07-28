@@ -40,6 +40,6 @@ CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
 # Generate APP_KEY jika belum ada
 RUN php artisan key:generate
 
-# Cache config dan route
+# Cache config dan route nya
 RUN php artisan config:cache
 RUN php artisan route:cache
