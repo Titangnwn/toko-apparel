@@ -28,9 +28,6 @@ WORKDIR /var/www/html
 # Salin semua isi project
 COPY . .
 
-# Copy .env ke dalam container nya
-COPY .env .env
-
 # Install dependencies Laravel
 RUN composer install --no-dev --optimize-autoloader
 
@@ -39,3 +36,10 @@ RUN chmod +x artisan
 
 # Jalankan Laravel di port 8080
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
+
+# Generate APP_KEY jika belum ada
+RUN php artisan key:generate
+
+# Cache config dan route
+RUN php artisan config:cache
+RUN php artisan route:cache
