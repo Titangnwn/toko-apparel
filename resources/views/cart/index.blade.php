@@ -39,7 +39,7 @@
                     @endphp
                     <tr>
                         <td class="p-2 border flex items-center gap-3">
-                            <img src="{{ $item['image'] }}" class="h-12 w-12 object-cover rounded">
+                            <img src="{{ asset('assets/' . $item['image']) }}" class="h-12 w-12 object-cover rounded">
                             {{ $item['name'] }}
                         </td>
                         <td class="p-2 border">Rp {{ number_format($item['price'], 0, ',', '.') }}</td>

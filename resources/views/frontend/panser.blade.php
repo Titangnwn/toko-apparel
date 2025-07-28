@@ -22,6 +22,25 @@
 </head>
 <body class="bg-gray-100">
 
+@if(session('error') || session('success'))
+    <div id="alert-box" class="fixed inset-0 flex justify-center items-center z-50">
+        <div class="relative bg-white border px-6 py-4 rounded-lg shadow-lg max-w-md w-full text-center
+                    {{ session('error') ? 'border-red-400 text-red-700' : 'border-green-400 text-green-700' }}">
+            <strong>
+                {{ session('error') ?? session('success') }}
+            </strong>
+
+            <!-- Tombol Tutup -->
+            <button onclick="document.getElementById('alert-box').remove()"
+                    class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl font-bold">
+                &times;
+            </button>
+        </div>
+    </div>
+@endif
+
+
+
 <!-- Navbar -->
 <nav class="bg-gray-900 text-white fixed top-0 w-full z-50 animate__animated animate__fadeInDown">
     <div class="container mx-auto flex items-center justify-between px-4 py-4">
@@ -51,7 +70,7 @@
     <input type="hidden" name="id" value="1">
     <input type="hidden" name="name" value="Jersey Panser Home 24/25">
     <input type="hidden" name="price" value="200000">
-    <input type="hidden" name="image" value="{{ asset('assets/home.webp') }}">
+    <input type="hidden" name="image" value="home.webp">
 
     <button type="submit" class="mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -76,7 +95,7 @@
     <input type="hidden" name="id" value="2">
     <input type="hidden" name="name" value="Jersey Panser away 24/25">
     <input type="hidden" name="price" value="250000">
-    <input type="hidden" name="image" value="{{ asset('assets/away.webp') }}">
+    <input type="hidden" name="image" value="away.webp">
 
     <button type="submit" class="mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

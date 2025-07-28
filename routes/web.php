@@ -7,6 +7,11 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CartController;
 
+Route::get('/clear-cart', function () {
+    session()->forget('cart');
+    return redirect()->route('cart.index')->with('success', 'Keranjang dikosongkan!');
+});
+
 // Halaman keranjang
 Route::get('/keranjang', [CartController::class, 'index'])->name('cart.index');
 
