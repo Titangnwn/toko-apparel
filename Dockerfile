@@ -24,3 +24,5 @@ RUN chmod -R 755 /var/www/html && chmod -R 775 storage bootstrap/cache
 
 # Jalankan server Laravel di port 8080
 CMD php artisan serve --host=0.0.0.0 --port=8080
+
+RUN chmod +x artisan
