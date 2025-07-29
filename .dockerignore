@@ -1,8 +1,7 @@
 # Laravel specific
 /vendor
-/public
 /node_modules
-/public/storage
+public/storage
 /storage/*.key
 .env
 .phpunit.result.cache
