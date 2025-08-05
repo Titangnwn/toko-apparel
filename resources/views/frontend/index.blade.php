@@ -105,7 +105,7 @@
                     </span>
                 </a>
             </li>
-            <!-- Tambah tombol keranjang -->
+<!-- Tambah tombol keranjang -->
 <li>
     <a href="{{ route('cart.index') }}" class="relative group text-black transition flex items-center">
         <svg class="w-6 h-6 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -116,8 +116,7 @@
         </span>
     </a>
 </li>
-
-        </ul>
+</ul>
     </div>
     <!-- Mobile Menu (Toggle On) -->
     <ul class="lg:hidden hidden flex-col px-6 pb-4 space-y-4" id="mobile-menu">
@@ -248,7 +247,8 @@
      <!-- Slide 1 -->
      <div class="min-w-full carousel-slide flex flex-row gap-4 md:gap-8 items-stretch p-4">
       <div class="w-1/2 h-64 md:h-96">
-       <img alt="Store Image 1" class="rounded-lg shadow-lg w-full h-full object-cover" onerror="this.style.display='block'; this.src='default.png';" src="{{ asset('assets/logo.png') }}"/>
+       <img alt="Store Image 1" class="rounded-lg shadow-lg w-full h-full object-cover" onerror="this.style.display='block'; 
+       this.src='default.png';" src="{{ asset('assets/logo.png') }}"/>
       </div>
       <div class="w-1/2 flex flex-col justify-center text-left">
        <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-4">
@@ -263,21 +263,24 @@
      <!-- Slide 2 -->
      <div class="min-w-full carousel-slide flex flex-row gap-4 md:gap-8 items-stretch p-4">
       <div class="w-1/2 h-64 md:h-96">
-       <img alt="Store Image 2" class="rounded-lg shadow-lg w-full h-full object-cover" onerror="this.style.display='block'; this.src='default.png';" src="{{ asset('assets/x.png') }}"/>
+       <img alt="Store Image 2" class="rounded-lg shadow-lg w-full h-full object-cover" onerror="this.style.display='block'; 
+       this.src='default.png';" src="{{ asset('assets/x.png') }}"/>
       </div>
       <div class="w-1/2 flex flex-col justify-center text-left">
        <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-4">
         ENMA X PANSER
        </h2>
        <p class="text-sm md:text-base text-gray-700">
-        Kami sudah menjalin kerja sama dengan klub dari Bandung dan telah merilis jersey kerja sama dengan format Home dan Away serta merilis jersey spesial dari mereka.
+        Kami sudah menjalin kerja sama dengan klub dari Bandung dan telah merilis jersey kerja sama dengan format Home dan 
+        Away serta merilis jersey spesial dari mereka.
        </p>
       </div>
      </div>
      <!-- Slide 3 -->
      <div class="min-w-full carousel-slide flex flex-row gap-4 md:gap-8 items-stretch p-4">
       <div class="w-1/2 h-[300px] md:h-96">
-       <img alt="Store Image 3" class="rounded-lg shadow-lg w-full h-full object-cover" onerror="this.style.display='block'; this.src='default.png';" src="{{ asset('assets/loba-harkoss.png') }}"/>
+       <img alt="Store Image 3" class="rounded-lg shadow-lg w-full h-full object-cover" onerror="this.style.display='block'; 
+       this.src='default.png';" src="{{ asset('assets/loba-harkoss.png') }}"/>
       </div>
       <div class="w-1/2 flex flex-col justify-center text-left">
        <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-4">
@@ -402,28 +405,32 @@
         <div class="relative overflow-hidden rounded-lg shadow-lg">
             <img src="{{ asset('assets/x.png') }}" alt="Jersey 1" class="w-full h-70 object-cover">
             <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                <a href="{{ route('panser') }}" class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm btn-animate">Panser →</a>
+                <a href="{{ route('panser') }}" class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm 
+                btn-animate">Panser →</a>
             </div>
         </div>
         <!-- Produk 2 -->
         <div class="relative overflow-hidden rounded-lg shadow-lg">
             <img src="{{ asset('assets/logo.png') }}" alt="Jersey 2" class="w-full h-70 object-cover">
             <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                <a href="{{ route('our') }}" class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm btn-animate">Our →</a>
+                <a href="{{ route('our') }}" class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm 
+                btn-animate">Our →</a>
             </div>
         </div>
         <!-- Produk 3 -->
         <div class="relative overflow-hidden rounded-lg shadow-lg">
             <img src="{{ asset('assets/custom.jpg') }}" alt="Jersey 3" class="w-full h-70 object-cover">
             <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                <a href="{{ route('custom') }}" class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm btn-animate">Custom →</a>
+                <a href="{{ route('custom') }}" class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm 
+                btn-animate">Custom →</a>
             </div>
         </div>
         <!-- Produk 4 -->
         <div class="relative overflow-hidden rounded-lg shadow-lg">
             <img src="{{ asset('assets/loba-harkos.png') }}" alt="Jersey 4" class="w-full h-70 object-cover">
             <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                <a href="{{ route('lh') }}" class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm btn-animate">LH →</a>
+                <a href="{{ route('lh') }}" class="bg-white text-black px-3 py-1.5 rounded-md font-semibold text-sm 
+                btn-animate">LH →</a>
             </div>
         </div>
     </div>

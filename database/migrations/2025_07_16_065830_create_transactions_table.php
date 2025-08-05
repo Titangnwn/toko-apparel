@@ -21,9 +21,7 @@ return new class extends Migration
     $table->string('user_email'); // atau user_id jika pakai auth
     $table->timestamps();
 });
-
     }
-
     /**
      * Reverse the migrations.
      */

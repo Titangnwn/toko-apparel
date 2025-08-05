@@ -29,10 +29,8 @@ class ProdukResource extends Resource
                 ->label('Nama Produk')
                 ->required()
                 ->maxLength(255),
-
             Forms\Components\Textarea::make('deskripsi')
                 ->label('Deskripsi'),
-
             Forms\Components\FileUpload::make('gambar')
                 ->label('Gambar')
                 ->image()
@@ -41,13 +39,11 @@ class ProdukResource extends Resource
                 ->preserveFilenames()
                 ->imagePreviewHeight('150')
                 ->required(),
-
             Forms\Components\TextInput::make('harga')
                 ->label('Harga')
                 ->numeric()
                 ->required()
                 ->prefix('Rp'),
-
             Forms\Components\TextInput::make('stok')
                 ->label('Stok')
                 ->numeric()

@@ -8,7 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans leading-relaxed min-h-screen flex flex-col">
-
     <!-- Main Content -->
     <main class="flex-grow">
         <div class="container mx-auto px-4 py-10">

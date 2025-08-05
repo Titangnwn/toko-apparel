@@ -53,7 +53,6 @@
 <li><a href="{{ route('index') }}" class="hover:text-gray-300 animate__animated animate__fadeIn">Back</a></li>
     </div>
 </nav>
-
 <!-- Daftar Produk -->
 <section id="products" class="py-20">
     <div class="container mx-auto px-4">
@@ -72,15 +71,18 @@
     <input type="hidden" name="price" value="200000">
     <input type="hidden" name="image" value="home.webp">
 
-    <button type="submit" class="mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <button type="submit" class="mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white 
+    px-6 py-2 rounded-full hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 
+    inline-flex items-center justify-center gap-2 shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" 
+        stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 5m0 0h16m-16 0a1 1 0 001 1h14a1 1 0 001-1m-16 0a1 1 0 011-1" />
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 5m0 0h16m-16 0a1 1 0 001 
+                1h14a1 1 0 001-1m-16 0a1 1 0 011-1" />
         </svg>
         Tambah ke Keranjang
     </button>
 </form>
-
     </div>
 </div>
 
