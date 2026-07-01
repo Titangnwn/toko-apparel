@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
 @section('content')
 <div class="container mx-auto px-4 py-10">
     <h1 class="text-2xl font-bold mb-6">Data Transaksi</h1>

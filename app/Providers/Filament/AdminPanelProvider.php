@@ -28,7 +28,7 @@ class AdminPanelProvider extends PanelProvider
         ->path('admin')
         ->login()
         ->brandName('Admin Panel') // Ganti tulisan "Filament"
-        // ->brandLogo(asset('images/logo.png')) // Optional, jika ingin pakai logo
+        ->favicon(asset('assets/logo.png'))
         ->colors([
             'primary' => Color::Amber,
         ])

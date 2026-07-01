@@ -1,4 +1,13 @@
 @extends('layouts.app')
+<link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
+<header class="bg-white shadow">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">Keranjang</h1>
+            <nav class="space-x-4">
+                <a href="/" class="text-gray-700 hover:text-blue-500 transition">Home</a>
+            </nav>
+        </div>
+    </header>
 
 @section('content')
 <div class="container mx-auto px-4 py-10">
@@ -30,7 +39,8 @@
                     @endphp
                     <tr>
                         <td class="p-2 border flex items-center gap-3">
-                            <img src="{{ $item['image'] }}" class="h-12 w-12 object-cover rounded">
+                            <img src="{{ asset('assets/' . $item['image']) }}" class="h-12 w-12 
+                            object-cover rounded">
                             {{ $item['name'] }}
                         </td>
                         <td class="p-2 border">Rp {{ number_format($item['price'], 0, ',', '.') }}</td>
@@ -43,7 +53,6 @@
                                class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm">
                                 Hapus
                             </a>
-
                             <!-- Tombol Bayar -->
                             <a href="{{ route('cart.payOne', $id) }}"
                                onclick="return confirm('Bayar produk ini saja?')"

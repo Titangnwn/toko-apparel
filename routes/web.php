@@ -18,6 +18,11 @@ Route::middleware(['auth','admin'])->get('/admin-debug', function () {
 
 
 
+Route::get('/clear-cart', function () {
+    session()->forget('cart');
+    return redirect()->route('cart.index')->with('success', 'Keranjang dikosongkan!');
+});
+
 // Halaman keranjang
 Route::get('/keranjang', [CartController::class, 'index'])->name('cart.index');
 
