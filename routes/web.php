@@ -6,6 +6,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\AdminController;
+use app\Http\Middleware\AdminMiddleware;
+
+
+// Admin
+Route::middleware(['auth','admin'])->get('/admin-debug', function () {
+    dd(app()->make('admin'));
+});
+
+
 
 // Halaman keranjang
 Route::get('/keranjang', [CartController::class, 'index'])->name('cart.index');
